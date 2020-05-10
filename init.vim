@@ -7,11 +7,17 @@ Plug 'fatih/vim-go'
 Plug 'ap/vim-css-color'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sheerun/vim-polyglot'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
 set mouse=a
-set number
+set nu
 
 syntax on
+
+set background=dark
+colorscheme darcula
+
+filetype on
+filetype plugin on
+filetype indent on
