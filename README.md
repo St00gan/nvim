@@ -9,12 +9,20 @@
 * [Vim CSS Color](https://github.com/ap/vim-css-color)
 * [Auto Pairs](https://github.com/jiangmiao/auto-pairs)
 * [Vim Polyglot](https://github.com/sheerun/vim-polyglot)
-* [COC Nvim](https://github.com/neoclide/coc.nvim)
+* [Deoplete](https://github.com/Shougo/deoplete.nvim)
+* [Deoplete Go](https://github.com/deoplete-plugins/deoplete-go)
 
 ### Other Settings I have set
 ```
 set mouse=a
-set number
+set nu
 
 syntax on
+
+set background=dark
+colorscheme darcula
+
+filetype on
+filetype plugin on
+filetype indent on
 ```
