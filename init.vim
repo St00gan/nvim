@@ -1,54 +1,53 @@
-call plug#begin('~/local/share/nvim/plugged')
-
-function! BuildYCM(info)
-  " info is a dictionary with 3 fields
-  " - name:   name of the plugin
-  " - status: 'installed', 'updated', or 'unchanged'
-  " - force:  set on PlugInstall! or PlugUpdate!
-  if a:info.status == 'installed' || a:info.force
-    !./install.py
-  endif
-endfunction
-
-Plug 'ycm-core/YouCompleteMe', { 'do': function('BuildYCM') }
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'francoiscabrol/ranger.vim'
-Plug 'ap/vim-css-color'
-Plug 'jiangmiao/auto-pairs'
-Plug 'fatih/vim-go'
-
-call plug#end()
-
-set mouse=a
-set nu
 set noerrorbells
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab "Convert from Tabs to Spaces"
 set smartindent
+set nu
 set nowrap
 set smartcase
+set noswapfile "eww"
+set nobackup "git gud"
 set incsearch
-
-syntax on
-
-set background=dark
-colorscheme darcula
 
 filetype on
 filetype plugin on
 filetype indent on
 
-let g:go_version_warning = 0
+colorscheme darcula
+set background=dark
+let g:airline_powerline_fonts = 1
+let g:airline_theme='base16_atelierdune' 
 
-let t:is_transparent = 0                                                                        
-function! Toggle_transparent_background()                                                       
-  if t:is_transparent == 0                                                                      
-    hi Normal guibg=#111111 ctermbg=black                                                       
-    let t:is_transparent = 1                                                                    
-  else                                                                                          
-    hi Normal guibg=NONE ctermbg=NONE                                                           
-    let t:is_transparent = 0                                                                    
-  endif                                                                                         
-endfunction                                                                                     
-nnoremap <F4> :call Toggle_transparent_background()<CR>  
+set colorcolumn=80 "Color Column is to make sure I type short code"
+highligh ColorColumn ctermbg=0 guibg=lightgrey
 
+let g:netrw_browse_split=2
+let g:netrw_banner=0
+let g:netrw_winsize=25
+
+let mapleader = " "
+
+call plug#begin('~/.local/config/nvim/plugged')
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'fatih/vim-go'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mhinz/vim-startify'
+
+call plug#end()
+
+"REMAPS"
+nnoremap <leader>f :CtrlP <return>
+
+"Custom Header"
+    let g:startify_custom_header = [                                            
+            \ '    ▐ ▄ ▄▄▄ .       ▌ ▐·▪  • ▌ ▄ ·.   ',
+            \ '   •█▌▐█▀▄.▀· ▄█▀▄ ▪█·█▌██ ·██ ▐███▪  ',
+            \ '   ▐█▐▐▌▐▀▀▪▄▐█▌.▐▌▐█▐█•▐█·▐█ ▌▐▌▐█·  ',
+            \ '   ██▐█▌▐█▄▄▌▐█▌.▐▌ ███ ▐█▌██ ██▌▐█▌  ',
+            \ '   ▀▀ █▪ ▀▀▀  ▀█▄▀▪. ▀  ▀▀▀▀▀  █▪▀▀▀  ',
+            \ ]
+       
