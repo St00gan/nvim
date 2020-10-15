@@ -3,7 +3,7 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab "Convert from Tabs to Spaces"
 set smartindent
-set nu
+set rnu
 set nowrap
 set smartcase
 set noswapfile "eww"
