@@ -20,7 +20,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_atelierdune' 
 
 set colorcolumn=80 "Color Column is to make sure I type short code"
-highligh ColorColumn ctermbg=0 guibg=lightgrey
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 let g:netrw_browse_split=2
 let g:netrw_banner=0
